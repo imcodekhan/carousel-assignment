@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+
+body {
+    
+    /* 🩶 Background & text */
+    background-color: #0f0f0f;       /* deep gray for good contrast */
+    color: #f5f5f5;                  /* near-white, easy to read on dark bg */
+  
+    /* 📏 Layout */
+    padding-left: 1.5rem;            /* 24px, provides breathing space */
+    padding-right: 1.5rem;
+    margin: 0;                       /* remove browser defaults */
+  
+    /* 🧠 Typography */
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 16px;                 /* WCAG minimum for body text */
+    line-height: 1.6;                /* improves readability */
+    letter-spacing: 0.3px;           /* subtle but readable */
+    
+    /* 🪄 Rendering & transitions */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+/* Ensure focus is clearly visible */
+:focus-visible {
+    outline: 3px solid #e50914;      /* Netflix red for visibility */
+    outline-offset: 4px;
+  }
+  
+/* Optional – scroll behavior */
+html {
+    scroll-behavior: smooth;
+  }
