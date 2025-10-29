@@ -28,7 +28,7 @@ const Carousel: React.FC = () => {
       <ArrowButton position="prev" label="Previous Slide" onClick={() => {}} />
     ),
     autoplay: autoPlay,
-    autoplaySpeed: 30,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     pauseOnFocus:true,
     swipe: true,

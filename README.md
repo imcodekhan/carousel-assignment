@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# 🎯 Accessibility Carousel Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements an **Accessible Carousel** using **React Slick**, built according to the **W3C ARIA Carousel Authoring Practices**.  
+It supports full **keyboard navigation** and has been verified using the **NVDA screen reader** for accessibility compliance.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Run the project locally
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/imcodekhan/carousel-assignment.git
+cd carousel-assignment
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then open http://localhost:5173 in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧩 Accessibility Testing Summary
+
+**Screen Reader Used:** NVDA (Windows 11)  
+**Testing Mode:** Keyboard only (no mouse)
+
+| Area | Expected Behavior | Result |
+|------|--------------------|--------|
+| **Prev / Next Buttons** | Announced as “Previous slide, button” and “Next slide, button” | ✅ |
+| **Activation (Space / Enter)** | Triggers slide change correctly | ✅ |
+| **Dots (Slide Selectors)** | Announced as “Go to slide X” and activate via Enter / Space | ✅ |
+| **Slide Announcement** | “Slide 2 of 5: Grave of the Fireflies” (and others) read aloud | ✅ |
+| **Auto-Rotation** | Pauses automatically on focus or hover; resumes on blur | ✅ |
+| **Play / Pause Toggle** | Works via Enter / Space; updates `aria-pressed` and SR announcement | ✅ |
+| **Focus Indicators** | All controls show a red outline on focus | ✅ |
+| **Contrast** | Left/right arrow buttons use dark background for visibility | ✅ |
+| **Captions** | Slight darker background, readable, and announced by SR | ✅ |
+| **Slide Pause on Move / Hover / Focus** | Carousel pauses when hovered or focused, resumes on blur | ✅ |
+
+
+live demo at : moonlit-puppy-e2f9ad.netlify.app
